@@ -2,8 +2,7 @@
 
 .input-group {
   position: relative;
-  margin: 20px 0 20px;
-  // padding-bottom: 20px;
+  margin: 32px 0 32px;
 }
 
 input, textarea {
@@ -11,7 +10,6 @@ input, textarea {
   border-radius: 4px;
   background: transparent;
   padding: 0 12px;
-  width: 100%;
   border: 1px solid #9bc3d3;
   font: 13px $jaldi;
   line-height: 40px;
@@ -28,12 +26,12 @@ input:focus, textarea:focus {
   
 label {
   color: #999;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
   left: 10px;
-  top: 6px;
+  top: 11px;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;

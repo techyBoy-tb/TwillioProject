@@ -1,9 +1,7 @@
 <div class="container">
-  <mat-card class="card card-body describe modal">
-    <mat-card-header>
-      <mat-card-title>Lets create a room</mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="card-text">
+  <div id="card-container">
+    <div *ngIf="loading" class="card">
+      <h3>Lets create a room</h3>
       <p>
         Ok lets create a room now.
       </p>
@@ -13,39 +11,18 @@
         <app-input [label]="'Enter room number'" [typeOfInput]="'input'" [control]="roomInfo.get('roomName')">
         </app-input>
       </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button (click)="doThis()">Basic</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
-<div id="preview" #preview>
+      <button mat-raised-button color="accent" (click)="connectToRoom()">Connect to room!</button>
+    </div>
 
+    <div *ngIf="!loading" class="card">
+      <h3>
+        Connected to room: {{roomName}}
+      </h3>
+      <div #localParticipants id="local-media-container"></div>
+      <div #remoteParticipants id="remote-media-container"></div>
+
+      <button mat-raised-button color="warn" (click)="leaveRoom()">Leave room</button>
+    </div>
+
+  </div>
 </div>
-<div class="media-container">
-  <div id="local-media-container"></div>
-  <div id="remote-media-container"></div>
-</div>
-<!-- <div class="grid-container">
-  <div class="grid-bottom-right">
-    <a href="https://twitter.com/davidpine7" target="_blank"><i class="fab fa-twitter"></i> @davidpine7</a>
-  </div>
-  <div class="grid-left">
-    <app-rooms #rooms (roomChanged)="onRoomChanged($event)" [activeRoomName]="!!activeRoom ? activeRoom.name : null">
-    </app-rooms>
-  </div>
-  <div class="grid-content">
-    <app-camera #camera [style.display]="!!activeRoom ? 'none' : 'block'"></app-camera>
-    <app-participants #participants (leaveRoom)="onLeaveRoom($event)"
-      (participantsChanged)="onParticipantsChanged($event)" [style.display]="!!activeRoom ? 'block' : 'none'"
-      [activeRoomName]="!!activeRoom ? activeRoom.name : null"></app-participants>
-  </div>
-  <div class="grid-right">
-    <app-settings #settings (settingsChanged)="onSettingsChanged($event)"></app-settings>
-  </div>
-  <div class="grid-top-left">
-    <a href="https://www.twilio.com/video" target="_blank">
-      <img src="assets/twilio-badge-red.png" alt="Powered by Twilio" />
-    </a>
-  </div>
-</div> -->
