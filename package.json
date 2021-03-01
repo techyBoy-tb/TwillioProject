@@ -25,9 +25,12 @@
     "@angular/platform-browser-dynamic": "^9.1.12",
     "@angular/router": "^9.1.12",
     "@angular/service-worker": "^9.1.12",
+    "@microsoft/signalr": "^5.0.3",
     "babel-jest": "^24.9.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "twilio": "^3.57.0",
+    "twilio-video": "2.3.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
@@ -38,7 +41,7 @@
     "@angular/compiler-cli": "^9.1.12",
     "@angular/language-service": "^9.1.12",
     "@types/jest": "^24.0.18",
-    "@types/node": "~8.9.4",
+    "@types/node": "^12.1.1",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -48,6 +51,6 @@
     "protractor": "^7.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "^3.8.3"
+    "typescript": "3.7.5"
   }
 }

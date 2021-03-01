@@ -1,0 +1,21 @@
+<div [formGroup]="control.parent" [ngClass]="formHelper.showError(control)">
+
+  <label #input aria-label="custom-input">{{label}}</label>
+  <div *ngIf="typeOfInput === 'input'" class="input-group">
+    <input type="text" required [attr.formControlName]="controlName" autocomplete="off" [formControlName]="controlName"
+      formControlName="controlName" id={{name}}>
+    <span class="highlight"></span>
+    <label>{{label}}</label>
+  </div>
+
+  <div *ngIf="typeOfInput === 'text-area'" class="input-group">
+    <textarea type="text" rows="4" required [attr.formControlName]="controlName" [formControlName]="controlName"
+      formControlName="controlName" id={{name}}></textarea>
+    <span class="highlight"></span>
+    <label>{{label}}</label>
+  </div>
+
+  <div *ngIf="touchedAndInvalid()">
+    <label class="errorDirective_error">{{getErrorMessage()}}</label>
+  </div>
+</div>

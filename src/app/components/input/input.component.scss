@@ -1,0 +1,83 @@
+@import '../../styles/variables.scss';
+
+.input-group {
+  position: relative;
+  margin: 20px 0 20px;
+  // padding-bottom: 20px;
+}
+
+input, textarea {
+  display: block;
+  border-radius: 4px;
+  background: transparent;
+  padding: 0 12px;
+  width: 100%;
+  border: 1px solid #9bc3d3;
+  font: 13px $jaldi;
+  line-height: 40px;
+}
+
+input {
+  height: 40px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border: 1px solid #4285f4;
+}
+  
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 6px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+  
+input:focus ~ label,
+input:valid ~ label,
+textarea:focus ~ label,
+textarea:valid ~ label {
+  top: -25px;
+  font-size: 14px;
+  color: #4285f4;
+}
+
+
+
+.error-box {
+
+  & input,
+  & textarea {
+    border-color: $lightred !important;
+    background-color: transparent !important;
+    margin-bottom: -16px;
+    &:focus {
+      border-color: #4285f4;
+    }
+
+    & .errorDirective_error,
+    & .error {
+      display: block !important;
+    }
+  }
+  & input:focus ~ label,
+  & input:valid ~ label,
+  & textarea:focus ~ label,
+  & textarea:valid ~ label {
+     color: $lightred;
+  }
+}
+
+.errorDirective_error,
+.error {
+  font-weight: normal;
+  color: $lightred;
+  // display: none;
+  position: inherit;
+}
